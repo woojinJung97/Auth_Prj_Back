@@ -1,4 +1,4 @@
-package com.kr.travel.springbootprj;
+	package com.kr.travel.springbootprj;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +14,7 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:8080")  // Vue 서버 주소
+                        .allowedOrigins("http://localhost:5173")  // Vue 서버 주소
                         .allowedMethods("GET", "POST", "PUT", "DELETE");
             }
         };
