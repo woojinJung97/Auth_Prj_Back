@@ -3,6 +3,7 @@ package com.kr.travel.springbootprj.home.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,11 +17,11 @@ public class UserManagementController {
 	UserManagementService service;
 	
 	@GetMapping("/api/user/userManagement")
-    public List<UserManagementDvo> userManagementList(
-     @RequestParam String userId,
-     @RequestParam String userName,
-     @RequestParam boolean isActive,
-     @RequestParam String createAt
+    public List<UserManagementDvo> userManagementList (
+        @RequestParam(required = false) String userId,
+        @RequestParam(required = false) String userName,
+        @RequestParam(required = false, defaultValue = "false") Boolean isActive,
+        @RequestParam(required = false) String createAt
      ) {
 		
 		UserManagementDvo param = new UserManagementDvo();
@@ -28,8 +29,7 @@ public class UserManagementController {
 		param.setUserName(userName);
 		param.setActive(isActive);
 		param.setCreateAt(createAt);
-		
-		
+	
 		List<UserManagementDvo> dvo = service.userManagementList(param);
     	return dvo;
     }
