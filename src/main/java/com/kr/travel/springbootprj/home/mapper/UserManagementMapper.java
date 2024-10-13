@@ -2,8 +2,11 @@ package com.kr.travel.springbootprj.home.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import com.kr.travel.springbootprj.home.dvo.UserManagementDvo;
 
+@Mapper
 public interface UserManagementMapper {
 
 	/**

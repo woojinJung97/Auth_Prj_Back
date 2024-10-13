@@ -1,5 +1,7 @@
 package com.kr.travel.springbootprj.home.dvo;
 
+import java.util.Date;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,16 +10,14 @@ import lombok.Setter;
 public class UserManagementDvo {
 
 	/* not null */
-    private String userId; 
+    private String id; 
     private String userName;
     private String email;
     private String password;
-
-    /* null 허용 */
-    private String fullName;
-    private boolean isActive; 
-    private String createAt;
-    private String updatedAt;
     
+    private String role;
+    private Date createAt;
+    
+    private String address; 
 	
 }
